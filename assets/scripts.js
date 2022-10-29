@@ -2,7 +2,7 @@
 var currentDay = $('#currentDay')
 
 function displayTime() {
-    var currentTime = moment().format('dddd, MMMM DD, YYYY [at] hh:mm a');
+    var currentTime = moment().format('dddd, MMMM DD, YYYY [at] hh:mm A');
     currentDay.text(currentTime);
   }
   //need to have this function in setInterval to keep current time by the second
