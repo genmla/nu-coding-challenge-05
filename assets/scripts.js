@@ -118,13 +118,27 @@ function displayTime() {
     text5.addClass("past")
   }
 
-  var hourx = 22
+  var hourx = 1
   var textx =$("#textx")
-  console.log(hourx)
-  var textxEvent = $(textx).val()
-  console.log(textxEvent)
-  if (textxEvent === "")
-  var textxEvent = localStorage.getItem("textxEvent")
+  var butx = $("#butx")
+  var textxEvent = textx.val()
+  console.log((moment().hour()) - hourx)
+
+  if ((moment().hour())-hourx > 8) {
+    textx.html("Scheduling Unavailable; Enter New Event Tomorrow")
+  }
+  else if(textxEvent === "[Enter Event]") {
+    textxEvent = localStorage.getItem("textxEvent")
+    textx.val(textxEvent)
+  }
+
+  function saveEventX () {
+    textxEvent = textx.val();
+    localStorage.setItem("textxEvent", textxEvent);
+    console.log(textxEvent)
+  } 
+
+   butx.on('click', saveEventX) 
 
   if (hourx == moment().hour()) {
     textx.addClass("present")
@@ -135,12 +149,3 @@ function displayTime() {
   else if (hourx < moment().hour()) {
     textx.addClass("past")
   }
-var butx = $("#butx")
-
-butx.on('click', function () {
-  var textxEvent = $(textx).val()
-  localStorage.setItem("textxEvent", textxEvent)
-})
-
-var currentHour = moment().hours();
-console.log(currentHour)
