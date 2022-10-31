@@ -14,7 +14,7 @@ Users can input their own events in each hour block. The calendar is coded to di
 
 ![GIF showing the user inputing events in the present time slot, clicking the icon to save the event, refreshing the page to demonstrate the event was saved. The user then enters a new event, saves it, refreshes, then modifies the recently entered event, saves it, and refreshes to demonstrate its storage and modification. ](/assets/Work%20Day%20Scheduler.gif)
 
-URL: 
+URL: https://genmla.github.io/nu-coding-challenge-05/
 
 ## Credits
 
